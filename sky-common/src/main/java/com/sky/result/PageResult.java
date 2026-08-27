@@ -13,3 +13,4 @@ public class PageResult implements Serializable {
     private long total;
     private List records;
 }
+
