@@ -15,6 +15,10 @@
     <dependencies>
         <dependency>
             <groupId>com.sky</groupId>
+            <artifactId>sky-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.sky</groupId>
             <artifactId>sky-pojo</artifactId>
         </dependency>
         <dependency>
@@ -41,6 +45,15 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-3-starter</artifactId>
+            <version>1.2.21</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
     </dependencies>
 
