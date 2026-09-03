@@ -8,6 +8,7 @@ import com.sky.service.SetmealService;
 import com.sky.vo.SetmealVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -18,6 +19,9 @@ import java.util.ArrayList;
 public class SetmealController {
     @Autowired
     private SetmealService setmealService;
+    @CacheEvict(
+            cacheNames = "setmealCache",
+            key = "#setmealDTO.categoryId")
     @PostMapping
     public Result insert(@RequestBody SetmealDTO setmealDTO) {
         log.info("新增套餐：{}", setmealDTO);
@@ -38,7 +42,12 @@ public class SetmealController {
         SetmealVO setmealVO =
                 setmealService.getById(id);
         return Result.success(setmealVO);
+
     }
+    @CacheEvict(
+            cacheNames = "setmealCache",
+            allEntries = true
+    )
     @PutMapping
     public Result update(
             @RequestBody SetmealDTO setmealDTO) {
@@ -46,6 +55,10 @@ public class SetmealController {
         setmealService.update(setmealDTO);
         return Result.success();
     }
+    @CacheEvict(
+            cacheNames = "setmealCache",
+            allEntries = true
+    )
     @PostMapping("/status/{status}")
     public Result startOrStop(@PathVariable Integer status, Long id) {
         log.info(
@@ -59,6 +72,10 @@ public class SetmealController {
         );
         return Result.success();
     }
+    @CacheEvict(
+            cacheNames = "setmealCache",
+            allEntries = true
+    )
     @DeleteMapping
     public Result deleteBatch(@RequestParam ArrayList<Long> ids){
         log.info("批量删除套餐：{}", ids);
