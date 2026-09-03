@@ -7,6 +7,7 @@ import com.sky.result.PageResult;
 import com.sky.vo.DishVO;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface DishService {
     void saveWithFlavor(DishDTO dishDTO);
@@ -22,5 +23,7 @@ public interface DishService {
     void deleteBatch(ArrayList<Long> ids);
 
     ArrayList<Dish> getByCategoryId(Long categoryId);
+
+    List<DishVO> listWithFlavor(Dish dish);
 
 }

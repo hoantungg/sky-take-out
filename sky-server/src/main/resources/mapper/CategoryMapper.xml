@@ -53,8 +53,9 @@
         select *
         from category
         <where>
+            status = 1
             <if test="type != null">
-                type = #{type}
+                and type = #{type}
             </if>
             <if test="name != null and name != ''">
                 and name = #{name}
