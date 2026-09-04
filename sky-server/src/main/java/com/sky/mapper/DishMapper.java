@@ -8,6 +8,7 @@ import com.sky.entity.DishFlavor;
 import com.sky.enumeration.OperationType;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,5 +42,8 @@ public interface DishMapper {
             @Param("categoryId") Long categoryId,
             @Param("status") Integer status
     );
+
+    @Select("select * from dish where id = #{id}")
+    Dish getById(Long id);
 
 }
