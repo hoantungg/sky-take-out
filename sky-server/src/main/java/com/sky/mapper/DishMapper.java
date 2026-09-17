@@ -12,6 +12,7 @@ import org.apache.ibatis.annotations.Select;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface DishMapper {
@@ -45,5 +46,9 @@ public interface DishMapper {
 
     @Select("select * from dish where id = #{id}")
     Dish getById(Long id);
+
+    Integer countByMap(
+            Map<String, Object> map
+    );
 
 }

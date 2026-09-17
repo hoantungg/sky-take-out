@@ -33,4 +33,18 @@
 
     </insert>
 
+
+    <select id="countByMap"
+            resultType="java.lang.Integer">
+
+        select count(*)
+        from user
+        where create_time <![CDATA[ < ]]> #{map.end}
+          and create_time <![CDATA[ > ]]> #{map.begin}
+
+    </select>
+
+
+
+
 </mapper>
