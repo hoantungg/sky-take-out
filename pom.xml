@@ -29,6 +29,7 @@
         <pagehelper.version>1.4.7</pagehelper.version>
         <knife4j.version>4.3.0</knife4j.version>
         <jwt.version>0.12.5</jwt.version>
+        <poi.version>3.16</poi.version>
     </properties>
 
     <!-- 统一管理依赖版本 -->
@@ -39,6 +40,18 @@
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybatis-spring-boot.version}</version>
+            </dependency>
+            <!-- Apache POI -->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi.version}</version>
             </dependency>
 
             <!-- PageHelper分页 -->
