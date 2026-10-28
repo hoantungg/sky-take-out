@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Local secret configuration ###
+sky-server/src/main/resources/application-local.properties
