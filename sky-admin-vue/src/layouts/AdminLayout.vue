@@ -20,6 +20,10 @@ const handlelogout = () => {
         <RouterLink to="/dashboard">
           工作台
         </RouterLink>
+
+        <RouterLink to="/employees">
+          员工管理
+        </RouterLink>
       </nav>
     </aside>
 
